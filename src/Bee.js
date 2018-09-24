@@ -1,10 +1,10 @@
 var Bee = function() {
-
-	this.food = new Grub().food;
+  Grub.call(this);
+	// this.food = Grub.prototype.food;
 	this.age = 5;
 	this.color = 'yellow';
 	this.job = 'keep on growing'
 };
 
-Bee.prototype.eat = new Grub().eat
-
+Bee.prototype = Object.create(Grub.prototype);
+Bee.prototype.constructor = Bee;
